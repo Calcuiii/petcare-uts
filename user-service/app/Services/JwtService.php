@@ -1,4 +1,3 @@
-// app/Services/JwtService.php
 <?php
 
 namespace App\Services;
