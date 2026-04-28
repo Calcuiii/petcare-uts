@@ -1,0 +1,1396 @@
+{
+  "info": {
+    "_postman_id": "640c9631-9db0-4d65-b66a-6189c440fccb",
+    "name": "Petcare",
+    "description": "Dokumentasi Pet Care pada bagian User Service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54137782",
+    "_collection_link": "https://go.postman.co/collection/54137782-640c9631-9db0-4d65-b66a-6189c440fccb?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Karina Ayu Meita Anwar\",\r\n  \"email\": \"meitaAnwar@email.com\",\r\n  \"password\": \"raitasdaa=56\",\r\n  \"phone\": \"08123858888\",\r\n  \"address\": \"Surabaya\",\r\n  \"role\": \"customer\",\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/register",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "register"
+          ]
+        },
+        "description": "Enpoint register untuk aplikasi webiste Petcare"
+      },
+      "response": [
+        {
+          "name": "success",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Karin Meita\",\r\n  \"email\": \"meita@gmail.com\",\r\n  \"password\": \"Meita1234.\",\r\n  \"phone\": \"08126858988\",\r\n  \"address\": \"Surabaya\",\r\n  \"role\": \"customer\",\r\n  \"created_at\": \"\",\r\n  \"updateed_at\": \"\"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/register",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "register"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": "Text",
+          "header": [
+            {
+              "key": "Host",
+              "value": "localhost:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.12"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 28 Apr 2026 22:23:48 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-RateLimit-Limit",
+              "value": "60"
+            },
+            {
+              "key": "X-RateLimit-Remaining",
+              "value": "59"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": \"success\",\n    \"message\": \"User registered successfully\",\n    \"data\": {\n        \"user\": {\n            \"id\": 13,\n            \"name\": \"Karin Meita\",\n            \"email\": \"meita@gmail.com\",\n            \"role\": \"customer\"\n        },\n        \"access_token\": \"{{vault:json-web-token}}\",\n        \"token_type\": \"Bearer\"\n    }\n}"
+        },
+        {
+          "name": "failed",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Salsabilla Putri Pitoyo\",\r\n  \"email\": \"\",\r\n  \"password\": \"bismilah34rts2.\",\r\n  \"phone\": \"08123858998\",\r\n  \"address\": \"Surabaya\",\r\n  \"role\": \"customer\",\r\n  \"created_at\": \"\",\r\n  \"updateed_at\": \"\"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/register",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "register"
+              ]
+            }
+          },
+          "status": "Unprocessable Content",
+          "code": 422,
+          "_postman_previewlanguage": "Text",
+          "header": [
+            {
+              "key": "Host",
+              "value": "localhost:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.12"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 28 Apr 2026 20:39:52 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-RateLimit-Limit",
+              "value": "60"
+            },
+            {
+              "key": "X-RateLimit-Remaining",
+              "value": "58"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Email wajib diisi\",\n    \"errors\": {\n        \"email\": [\n            \"Email wajib diisi\"\n        ]\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        },
+        "description": "Endpoint untuk fitur login"
+      },
+      "response": [
+        {
+          "name": "success",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"naila@gmail.com\",\r\n  \"password\": \"Rifda1234.\"\r\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/login",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "login"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "Text",
+          "header": [
+            {
+              "key": "Host",
+              "value": "localhost:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.12"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 28 Apr 2026 20:45:42 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-RateLimit-Limit",
+              "value": "60"
+            },
+            {
+              "key": "X-RateLimit-Remaining",
+              "value": "58"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": \"success\",\n    \"message\": \"Login successful\",\n    \"data\": {\n        \"user\": {\n            \"id\": 10,\n            \"name\": \"Rifda Maulidya\",\n            \"email\": \"ririfda@gmail.com\",\n            \"role\": \"customer\"\n        },\n        \"access_token\": \"{{vault:json-web-token}}\",\n        \"token_type\": \"Bearer\"\n    }\n}"
+        },
+        {
+          "name": "error",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"ririfda@gmail.com\",\r\n  \"password\": \"Rifda12\"\r\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/login",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "login"
+              ]
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "_postman_previewlanguage": "Text",
+          "header": [
+            {
+              "key": "Host",
+              "value": "localhost:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.12"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 28 Apr 2026 20:46:15 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-RateLimit-Limit",
+              "value": "60"
+            },
+            {
+              "key": "X-RateLimit-Remaining",
+              "value": "59"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": \"error\",\n    \"message\": \"Invalid credentials\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Logout",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{vault:json-web-token}}",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/logout",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "logout"
+          ]
+        },
+        "description": "Endpoint untuk fitur logout"
+      },
+      "response": [
+        {
+          "name": "success",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{vault:json-web-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/logout",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "logout"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "Text",
+          "header": [
+            {
+              "key": "Host",
+              "value": "localhost:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.12"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 28 Apr 2026 21:32:10 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-RateLimit-Limit",
+              "value": "60"
+            },
+            {
+              "key": "X-RateLimit-Remaining",
+              "value": "59"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": \"success\",\n    \"message\": \"Logged out successfully\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "List of Users",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        },
+        "description": "Endpoint untuk melihat user yang telah melakukan register"
+      },
+      "response": [
+        {
+          "name": "success",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{vault:json-web-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{base_url}}/api/users",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "users"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "Text",
+          "header": [
+            {
+              "key": "Host",
+              "value": "localhost:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.12"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 28 Apr 2026 21:20:22 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-RateLimit-Limit",
+              "value": "60"
+            },
+            {
+              "key": "X-RateLimit-Remaining",
+              "value": "59"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": \"success\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Rifda\",\n            \"email\": \"rifda@email.com\",\n            \"phone\": \"08123456789\",\n            \"address\": \"Sidoarjo\",\n            \"role\": \"customer\",\n            \"created_at\": \"2026-04-28T10:24:25.000000Z\",\n            \"updated_at\": \"2026-04-28T10:24:25.000000Z\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Karina Ayu\",\n            \"email\": \"karinnn@email.com\",\n            \"phone\": \"08123456788\",\n            \"address\": \"Surabaya\",\n            \"role\": \"customer\",\n            \"created_at\": \"2026-04-28T14:17:04.000000Z\",\n            \"updated_at\": \"2026-04-28T14:17:04.000000Z\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Salsabilla Putri\",\n            \"email\": \"Zalsa@email.com\",\n            \"phone\": \"08123456888\",\n            \"address\": \"Surabaya\",\n            \"role\": \"customer\",\n            \"created_at\": \"2026-04-28T14:18:21.000000Z\",\n            \"updated_at\": \"2026-04-28T14:18:21.000000Z\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Billa Putri\",\n            \"email\": \"billa@email.com\",\n            \"phone\": \"08123458888\",\n            \"address\": \"Surabaya\",\n            \"role\": \"customer\",\n            \"created_at\": \"2026-04-28T14:22:02.000000Z\",\n            \"updated_at\": \"2026-04-28T14:22:02.000000Z\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Sasilla Putri\",\n            \"email\": \"billputri@email.com\",\n            \"phone\": \"08123458888\",\n            \"address\": \"Surabaya\",\n            \"role\": \"customer\",\n            \"created_at\": \"2026-04-28T14:27:14.000000Z\",\n            \"updated_at\": \"2026-04-28T14:27:14.000000Z\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Sasila Putri P\",\n            \"email\": \"bilputsalsa@email.com\",\n            \"phone\": \"08123458888\",\n            \"address\": \"Surabaya\",\n            \"role\": \"customer\",\n            \"created_at\": \"2026-04-28T14:28:47.000000Z\",\n            \"updated_at\": \"2026-04-28T14:28:47.000000Z\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Rifda Aulia\",\n            \"email\": \"ririfdaa@email.com\",\n            \"phone\": \"08123858888\",\n            \"address\": \"Surabaya\",\n            \"role\": \"customer\",\n            \"created_at\": \"2026-04-28T14:44:01.000000Z\",\n            \"updated_at\": \"2026-04-28T14:44:01.000000Z\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Rifda Maulidya A.\",\n            \"email\": \"rifdaamau@email.com\",\n            \"phone\": \"08123858888\",\n            \"address\": \"Surabaya\",\n            \"role\": \"customer\",\n            \"created_at\": \"2026-04-28T14:45:23.000000Z\",\n            \"updated_at\": \"2026-04-28T14:45:23.000000Z\"\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Salsabilla Putri Pitoyo\",\n            \"email\": \"bilasalsa@email.com\",\n            \"phone\": \"08123858998\",\n            \"address\": null,\n            \"role\": \"customer\",\n            \"created_at\": \"2026-04-28T20:39:04.000000Z\",\n            \"updated_at\": \"2026-04-28T20:39:04.000000Z\"\n        },\n        {\n            \"id\": 10,\n            \"name\": \"Rifda Maulidya\",\n            \"email\": \"ririfda@gmail.com\",\n            \"phone\": \"08123858978\",\n            \"address\": \"Surabaya\",\n            \"role\": \"customer\",\n            \"created_at\": \"2026-04-28T20:44:43.000000Z\",\n            \"updated_at\": \"2026-04-28T20:44:43.000000Z\"\n        },\n        {\n            \"id\": 11,\n            \"name\": \"Karina Ayu Meita Anwar\",\n            \"email\": \"karinaayu@gmail.com\",\n            \"phone\": \"08133858978\",\n            \"address\": \"Surabaya\",\n            \"role\": \"customer\",\n            \"created_at\": \"2026-04-28T21:03:12.000000Z\",\n            \"updated_at\": \"2026-04-28T21:03:12.000000Z\"\n        }\n    ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Profile",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{vault:json-web-token}}",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "{{base_url}}/api/profile",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "profile"
+          ]
+        },
+        "description": "Endpoint untuk fitur profile"
+      },
+      "response": [
+        {
+          "name": "success",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{vault:json-web-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{base_url}}/api/profile",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "profile"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "Text",
+          "header": [
+            {
+              "key": "Host",
+              "value": "localhost:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.12"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 28 Apr 2026 21:38:27 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-RateLimit-Limit",
+              "value": "60"
+            },
+            {
+              "key": "X-RateLimit-Remaining",
+              "value": "59"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"id\": 10,\n        \"name\": \"Rifda Maulidya\",\n        \"email\": \"ririfda@gmail.com\",\n        \"phone\": \"08123858978\",\n        \"address\": \"Surabaya\",\n        \"role\": \"customer\",\n        \"created_at\": \"2026-04-28T20:44:43.000000Z\",\n        \"updated_at\": \"2026-04-28T20:44:43.000000Z\"\n    }\n}"
+        },
+        {
+          "name": "failed",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{vault:json-web-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{base_url}}/api/profile",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "profile"
+              ]
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "_postman_previewlanguage": "Text",
+          "header": [
+            {
+              "key": "Host",
+              "value": "localhost:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.12"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 28 Apr 2026 23:12:39 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-RateLimit-Limit",
+              "value": "60"
+            },
+            {
+              "key": "X-RateLimit-Remaining",
+              "value": "59"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": \"error\",\n    \"message\": \"Invalid or expired token\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get User by ID",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{vault:json-web-token}}",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "{{base_url}}/api/users/",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            ""
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "success",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{vault:json-web-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{base_url}}/api/users/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "1"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "Text",
+          "header": [
+            {
+              "key": "Host",
+              "value": "localhost:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.12"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 28 Apr 2026 21:35:47 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-RateLimit-Limit",
+              "value": "60"
+            },
+            {
+              "key": "X-RateLimit-Remaining",
+              "value": "59"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Rifda\",\n        \"email\": \"rifda@email.com\",\n        \"phone\": \"08123456789\",\n        \"address\": \"Sidoarjo\",\n        \"role\": \"customer\",\n        \"created_at\": \"2026-04-28T10:24:25.000000Z\",\n        \"updated_at\": \"2026-04-28T10:24:25.000000Z\"\n    }\n}"
+        },
+        {
+          "name": "failed",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{vault:json-web-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{base_url}}/api/users/31",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "31"
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": "Text",
+          "header": [
+            {
+              "key": "Host",
+              "value": "localhost:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.12"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 28 Apr 2026 21:36:16 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-RateLimit-Limit",
+              "value": "60"
+            },
+            {
+              "key": "X-RateLimit-Remaining",
+              "value": "58"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": \"error\",\n    \"message\": \"User not found\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Delete a User",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        },
+        "description": "Endpoin untuk menghapus data user berdasarkan id dan kesesuaian token"
+      },
+      "response": [
+        {
+          "name": "success",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{vault:json-web-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{base_url}}/api/users/13",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "13"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "Text",
+          "header": [
+            {
+              "key": "Host",
+              "value": "localhost:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.12"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 28 Apr 2026 22:26:59 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-RateLimit-Limit",
+              "value": "60"
+            },
+            {
+              "key": "X-RateLimit-Remaining",
+              "value": "59"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": \"success\",\n    \"message\": \"User deleted successfully\"\n}"
+        },
+        {
+          "name": "failed",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{vault:json-web-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{base_url}}/api/users/16",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "16"
+              ]
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "_postman_previewlanguage": "Text",
+          "header": [
+            {
+              "key": "Host",
+              "value": "localhost:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.12"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 28 Apr 2026 22:27:37 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-RateLimit-Limit",
+              "value": "60"
+            },
+            {
+              "key": "X-RateLimit-Remaining",
+              "value": "58"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": \"error\",\n    \"message\": \"Invalid or expired token\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Update User",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{vault:json-web-token}}",
+            "type": "text"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Salsabilla\",\r\n    \"email\": \"salsabilla@gmail.com\",\r\n    \"address\": \"Surabaya\",\r\n    \"password\": \"Salsabilla1234.\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/users/15",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "users",
+            "15"
+          ]
+        },
+        "description": "Endpoint untuk mengubah keseluruhan data user"
+      },
+      "response": [
+        {
+          "name": "success",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{vault:json-web-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Salsabilla\",\r\n    \"email\": \"salsabilla@gmail.com\",\r\n    \"address\": \"Surabaya\",\r\n    \"password\": \"Salsabilla1234.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/users/15",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "15"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "Text",
+          "header": [
+            {
+              "key": "Host",
+              "value": "localhost:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.12"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 28 Apr 2026 22:58:44 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-RateLimit-Limit",
+              "value": "60"
+            },
+            {
+              "key": "X-RateLimit-Remaining",
+              "value": "59"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": \"success\",\n    \"message\": \"User updated successfully\",\n    \"data\": {\n        \"id\": 15,\n        \"name\": \"Salsabilla\",\n        \"email\": \"salsabilla@gmail.com\",\n        \"phone\": \"08126858988\",\n        \"address\": \"Surabaya\",\n        \"role\": \"customer\",\n        \"created_at\": \"2026-04-28T22:57:27.000000Z\",\n        \"updated_at\": \"2026-04-28T22:58:44.000000Z\"\n    }\n}"
+        },
+        {
+          "name": "failed",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{vault:json-web-token}}",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Salsabilla\",\r\n    \"email\": \"salsabilla@gmail.com\",\r\n    \"address\": \"Surabaya\",\r\n    \"password\": \"Salsabilla1234.\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/users/14",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "users",
+                "14"
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": "Text",
+          "header": [
+            {
+              "key": "Host",
+              "value": "localhost:8000"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            },
+            {
+              "key": "X-Powered-By",
+              "value": "PHP/8.2.12"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, private"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 28 Apr 2026 22:57:55 GMT"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "X-RateLimit-Limit",
+              "value": "60"
+            },
+            {
+              "key": "X-RateLimit-Remaining",
+              "value": "57"
+            },
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"status\": \"error\",\n    \"message\": \"User not found\"\n}"
+        }
+      ]
+    }
+  ]
+}
