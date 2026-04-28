@@ -17,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/bookings', [BookingController::class, 'index']);
 Route::get('/bookings/history/{userId}', [BookingController::class, 'historyByUser']);
 Route::post('/bookings', [BookingController::class, 'store']);
+Route::get('/health', function () {
+    return response()->json([
+        'status' => 'ok',
+        'service' => 'booking'
+    ]);
+});

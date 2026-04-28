@@ -13,15 +13,10 @@ return new class extends Migration
     {
         Schema::create('groomings', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_hewan');
-            $table->string('jenis_hewan');
-            $table->integer('umur')->nullable();
-            $table->string('layanan');
-            $table->integer('harga')->nullable();
-            $table->date('tanggal');
-            $table->time('jam')->nullable();
-            $table->string('nama_pemilik');
-            $table->string('no_hp');
+            $table->string('name');
+            $table->text('description');
+            $table->integer('price');
+            $table->integer('duration');
             $table->timestamps();
         });
     }
