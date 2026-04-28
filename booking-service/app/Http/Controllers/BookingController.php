@@ -35,7 +35,7 @@ class BookingController extends Controller
 
         // Validasi user ke UserService
         try {
-            $userRes = $client->get("http://localhost:8001/users/{$request->user_id}");
+            $userRes = $client->get("http://127.0.0.1:8001/api/users/{$request->user_id}");
             $user = json_decode($userRes->getBody(), true);
         } catch (\Exception $e) {
             return response()->json(['message' => 'User not found in UserService'], 404);
@@ -43,7 +43,7 @@ class BookingController extends Controller
 
         // Validasi grooming ke GroomingService
         try {
-            $groomRes = $client->get("http://localhost:8002/groomings/{$request->grooming_id}");
+            $groomRes = $client->get("http://127.0.0.1:8000/api/groomings/{$request->grooming_id}");
             $grooming = json_decode($groomRes->getBody(), true);
         } catch (\Exception $e) {
             return response()->json(['message' => 'Grooming service not found'], 404);

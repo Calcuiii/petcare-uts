@@ -20,6 +20,9 @@ use App\Http\Middleware\JwtMiddleware;
 Route::post('/register', [UserController::class, 'register']);
 Route::post('/login', [UserController::class, 'login']);
 
+Route::get('/users', [UserController::class, 'index']);
+Route::get('/users/{id}', [UserController::class, 'show']);
+
 // Protected routes (need token)
 Route::middleware([JwtMiddleware::class])->group(function () {
     Route::get('/profile', [UserController::class, 'profile']);
@@ -27,7 +30,8 @@ Route::middleware([JwtMiddleware::class])->group(function () {
     Route::put('/users/{id}', [UserController::class, 'update']);
     Route::delete('/users/{id}', [UserController::class, 'destroy']);
     
-    // Admin only routes
-    Route::get('/users', [UserController::class, 'index']);
-    Route::get('/users/{id}', [UserController::class, 'show']);
+});
+
+Route::get('/health', function () {
+    return response()->json(['status' => 'ok', 'service' => 'user']);
 });
