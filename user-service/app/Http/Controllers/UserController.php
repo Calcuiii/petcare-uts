@@ -132,7 +132,7 @@ class UserController extends Controller
 
         $user->name = $request->name ?? $user->name;
         $user->email = $request->email ?? $user->email;
-        $user->phone = $request->phone ?? $user->phone;
+    
         $user->address = $request->address ?? $user->address;
         
         if ($request->filled('password')) {

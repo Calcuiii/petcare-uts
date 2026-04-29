@@ -15,6 +15,7 @@ class JwtMiddleware
     {
         $this->jwtService = $jwtService;
     }
+
     /**
      * Handle an incoming request.
      *
@@ -22,7 +23,17 @@ class JwtMiddleware
      */
     public function handle($request, Closure $next)
     {
-                if (!$token) {
+        // 🔧 AMBIL TOKEN DARI HEADER AUTHORIZATION
+        $token = $request->bearerToken();  // Untuk header: Authorization: Bearer <token>
+        
+        // Atau alternatif lain:
+        // $token = $request->header('Authorization');
+        // $token = str_replace('Bearer ', '', $token);
+        
+        // Atau dari query parameter (kurang aman):
+        // $token = $request->query('token');
+
+        if (!$token) {
             return response()->json([
                 'status' => 'error',
                 'message' => 'Token not provided'
