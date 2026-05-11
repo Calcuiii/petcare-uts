@@ -1,0 +1,26 @@
+FROM php:8.2-cli
+WORKDIR /app
+
+# Install dependency Linux
+RUN apt-get update && apt-get install -y git unzip curl libpq-dev libonig-dev libzip-dev zip
+
+# Install PDO MySQL
+RUN docker-php-ext-install pdo pdo_mysql
+
+# Copy composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+# Copy semua file project
+COPY . .
+
+# Install dependency Laravel
+RUN composer install
+
+# Generate permission
+RUN chmod -R 777 storage bootstrap/cache
+
+# Port Laravel
+EXPOSE 8000
+
+# Jalankan Laravel
+CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]

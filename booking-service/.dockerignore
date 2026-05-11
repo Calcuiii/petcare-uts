@@ -1,0 +1,17 @@
+node_modules
+vendor
+
+.env
+.env.backup
+phpunit.xml
+
+storage/*.key
+storage/framework/cache/data/*
+storage/framework/sessions/*
+storage/framework/views/*
+storage/logs/*
+
+.git
+.gitignore
+Dockerfile
+.dockerignore
