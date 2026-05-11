@@ -29,20 +29,17 @@ class BookingController extends Controller
             'booking_date' => 'required|date',
         ]);
 
-        // Simpan booking langsung dengan status pending
         $booking = Booking::create([
             'user_id'      => $request->user_id,
             'grooming_id'  => $request->grooming_id,
             'pet_name'     => $request->pet_name,
             'pet_type'     => $request->pet_type,
             'booking_date' => $request->booking_date,
-            'status'       => 'pending', // ← status awal pending
+            'status'       => 'pending',
         ]);
 
-        // Lempar ke background queue
-        ProcessBookingJob::dispatch($booking); // ← TAMBAH INI
+        ProcessBookingJob::dispatch($booking);
 
-        // Langsung return tanpa nunggu validasi
         return response()->json([
             'message' => 'Booking sedang diproses',
             'booking' => $booking,
