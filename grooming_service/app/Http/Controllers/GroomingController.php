@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Jobs\ProcessGroomingBooking;
 use App\Models\Grooming;
 use Illuminate\Http\Request;
 
@@ -112,6 +112,7 @@ class GroomingController extends Controller
         ]);
 
         $grooming = Grooming::create($request->all());
+        ProcessGroomingBooking::dispatch($request->all());
 
         return response()->json([
             'status' => 'success',
